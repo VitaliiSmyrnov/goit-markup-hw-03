@@ -7,6 +7,8 @@
   --transp-color: rgba(255, 255, 255, 0.6);
   --accent-bg-color: #f5f4fa;
   --footer-bg-color: #2f303a;
+  --nav-border-color: #ECECEC;
+  --item-border-color: #EEEEEE;
 
   --font-w-500: 500;
   --font-w-700: 700;
@@ -39,6 +41,17 @@ body {
   outline: 2px solid tomato;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
 .list {
   margin: 0;
   padding: 0;
@@ -51,9 +64,23 @@ body {
 
 /* Page Index.html*/
 /* header  */
+
+.header {
+  border-bottom: 1px solid var(--nav-border-color);
+}
+
+/* main-nav  */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
 /* logo  */
 
 .logo {
+  display: block;
+
   font-family: 'Raleway', sans-serif;
   font-weight: var(--font-w-700);
   font-size: var(--font-sz-26);
@@ -71,7 +98,24 @@ body {
 
 /* nav  */
 
+.site-nav {
+  display: flex;
+  margin-left: 93px;
+}
+
+.site-nav .item:not(:last-child) {
+  margin-right: 50px;  
+}
+
+.site-nav .item {
+  outline: 1px solid green;
+}
+
 .site-nav .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   font-weight: var(--font-w-500);
   letter-spacing: var(--let-sp02);
   color: var(--main-text-color);
@@ -88,7 +132,24 @@ body {
 
 /* email + tel  */
 
+.nav-contacts {
+  display: flex;
+  margin-left: auto;
+}
+
+.nav-contacts .item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.nav-contacts .item {
+  outline: 1px solid green;
+}
+
 .nav-contacts .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   font-weight: var(--font-w-500);
   letter-spacing: var(--let-sp02);
   color: var(--light-text-color);
@@ -112,8 +173,9 @@ body {
 }
 
 .hero-title {
-  margin-top: 0;
   margin-bottom: 30px;
+  padding-left: 237px;
+  padding-right: 237px;
 
   font-weight: var(--font-w-900);
   font-size: var(--font-sz-44);
@@ -124,7 +186,7 @@ body {
 }
 
 .hero .hero-btn {
-    /* display: inline-block; */
+  /* display: inline-block; */
 
   font-family: inherit;
   font-weight: var(--font-w-700);
@@ -156,8 +218,8 @@ body {
 }
 
 .section-title {
-  margin-top: 0;
-  
+  margin-bottom: 50px;
+
   font-size: var(--font-sz-36);
   line-height: 1.17;
   text-align: center;
@@ -178,15 +240,19 @@ body {
   overflow: hidden;
 }
 
-.features-list .title {
-  margin-top: 0;
+.features-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.features-item .title {
   margin-bottom: 10px;
 
   font-size: inherit;
   text-transform: uppercase;
 }
 
-.features-list .text {
+.features-item .text {
   margin-top: 0;
 
   line-height: 1.71;
@@ -195,7 +261,10 @@ body {
 
 /* section work  */
 
-
+.work-item > img {
+  display: block;
+  outline: 1px solid green;
+}
 
 /* section team  */
 
@@ -204,10 +273,20 @@ body {
 }
 
 .team-item {
+  padding-bottom: 30px;
+
   background-color: var(--white-color);
 }
 
+.team-item > img {
+  margin-bottom: 30px;
+  outline: 1px solid green;
+}
+
 .team-item .title {
+  margin-bottom: 10px;
+   padding: 0 5px;  /*за макетом цього паддінгу немає, але ж він тут проситься про всяк випадок */
+
   font-weight: var(--font-w-500);
   font-size: var(--font-sz-16);
   line-height: 1.19;
@@ -215,6 +294,8 @@ body {
 }
 
 .team-item .text {
+  padding: 0 5px;   /*за макетом цього паддінгу немає, але ж він тут проситься про всяк випадок */
+
   font-size: var(--font-sz-16);
   line-height: 1.19;
   text-align: center;
@@ -224,12 +305,27 @@ body {
 /* footer  */
 
 .contacts {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
   background-color: var(--footer-bg-color);
+}
+
+.contacts .logo {
+  margin-bottom: 20px;
 }
 
 .contacts-list {
   font-style: normal;
   line-height: 1.71;
+}
+
+.contacts-list .item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.contacts-list .link {
+  display: block;
 }
 
 .contacts-list .link:hover,
@@ -249,6 +345,7 @@ body {
 /* Page Portfolio.html */
 
 .galery-filter .btn {
+  padding: 6px 22px;
   font-family: inherit;
   font-weight: var(--font-w-500);
   font-size: var(--font-sz-16);
@@ -257,7 +354,9 @@ body {
   color: inherit;
   background-color: var(--accent-bg-color);
   border-color: transparent;
+  border-radius: 4px;
   cursor: pointer;
+  outline: 1px solid orange;
 }
 
 .galery-filter .btn.active {
@@ -271,14 +370,31 @@ body {
   background-color: var(--accent-blue-color);
 }
 
-.galery-items .title {
+.galery-item {
+  padding-bottom: 20px;
+
+  border: 1px solid var(--item-border-color);
+  outline: 1px solid green;
+}
+
+.galery-item > img {
+  margin-bottom: 20px;
+  outline: 1px solid green;
+}
+
+.galery-item .title {
+  margin-bottom: 4px;
+  padding: 0 24px;
+
   font-size: var(--font-sz-18);
   line-height: 2;
   letter-spacing: var(--let-sp06);
   color: var(--main-text-color);
 }
 
-.galery-items .text {
+.galery-item .text {
+  padding: 0 24px;
+
   font-size: var(--font-sz-16);
   line-height: 1.88;
   color: var(--light-text-color);
