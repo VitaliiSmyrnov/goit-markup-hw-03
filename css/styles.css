@@ -359,6 +359,10 @@ p {
   margin-bottom: 50px;
 }
 
+.galery-filter > li:not(:last-child) {
+  margin-right: 8px;
+}
+
 .galery-filter .btn {
   padding: 6px 22px;
 
@@ -373,10 +377,6 @@ p {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.galery-filter > li:not(:last-child) {
-  margin-right: 8px;
 }
 
 .galery-filter .btn.active {
